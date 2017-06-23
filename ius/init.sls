@@ -42,7 +42,7 @@ ius.pubkey:
     - source_hash:  {{ salt['pillar.get']('ius:pubkey_hash', pkg.key_hash) }}
 
 include:
-    - base/epel
+    - epel
 
 ius.rpm:
   pkg.installed:
