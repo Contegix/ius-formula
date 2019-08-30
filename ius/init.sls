@@ -5,14 +5,14 @@
 
 {% set pkg = salt['grains.filter_by']({
   '6': {
-    'key': 'https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY',
-    'key_hash': 'md5=c1237411dfd37be229be063e8b5b4d10',
-    'rpm': 'https://centos6.iuscommunity.org/ius-release.rpm',
+    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-6',
+    'key_hash': 'md5=daba0b37526f84040450e13faa248b70',
+    'rpm': 'https://repo.ius.io/ius-release-el6.rpm',
   },
   '7': {
-    'key': 'https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY',
-    'key_hash': 'md5=c1237411dfd37be229be063e8b5b4d10',
-    'rpm': 'https://centos7.iuscommunity.org/ius-release.rpm',
+    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-7',
+    'key_hash': 'md5=de41e378194acdc9d324f93c82ab0593',
+    'rpm': 'https://repo.ius.io/ius-release-el7.rpm',
   },
 }, 'osmajorrelease') %}
 
@@ -20,14 +20,14 @@
 
 {% set pkg = salt['grains.filter_by']({
   '6': {
-    'key': 'https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY',
-    'key_hash': 'md5=c1237411dfd37be229be063e8b5b4d10',
-    'rpm': 'https://rhel6.iuscommunity.org/ius-release.rpm',
+    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-6',
+    'key_hash': 'md5=daba0b37526f84040450e13faa248b70',
+    'rpm': 'https://repo.ius.io/ius-release-el6.rpm',
   },
   '7': {
-    'key': 'https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY',
-    'key_hash': 'md5=c1237411dfd37be229be063e8b5b4d10',
-    'rpm': 'https://rhel7.iuscommunity.org/ius-release.rpm',
+    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-7',
+    'key_hash': 'md5=de41e378194acdc9d324f93c82ab0593',
+    'rpm': 'https://repo.ius.io/ius-release-el7.rpm',
   },
 }, 'osmajorrelease') %}
 
