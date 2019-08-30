@@ -22,6 +22,4 @@ Installs the GPG key and the IUS RPM package for the current OS.
 
 The IUS testing repository can be enabled by setting the Pillar ``ius:testing: True``.
 
-The IUS dev repository can be enabled by setting the Pillar ``ius:dev: True``.
-
 The IUS archive repository can be enabled by setting the Pillar ``ius:archive: True``.

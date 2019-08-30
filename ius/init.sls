@@ -80,20 +80,6 @@ ius.testing_enable:
     - repl: enabled=0
 {% endif %}
 
-{% if salt['pillar.get']('ius:dev', False) %}
-ius.dev_disable:
-  file.replace:
-    - name: /etc/yum.repos.d/ius-dev.repo
-    - pattern: '^enabled=\d'
-    - repl: enabled=1
-{% else %}
-ius.dev_enable:
-  file.replace:
-    - name: /etc/yum.repos.d/ius-dev.repo
-    - pattern: '^enabled=\d'
-    - repl: enabled=0
-{% endif %}
-
 {% if salt['pillar.get']('ius:archive', False) %}
 ius.archive_disable:
   file.replace:
