@@ -1,39 +1,20 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{% if grains['os'] == 'CentOS' %}
-
-{% set pkg = salt['grains.filter_by']({
-  '6': {
-    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-6',
-    'key_hash': 'md5=daba0b37526f84040450e13faa248b70',
-    'rpm': 'https://repo.ius.io/ius-release-el6.rpm',
-  },
-  '7': {
-    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-7',
-    'key_hash': 'md5=de41e378194acdc9d324f93c82ab0593',
-    'rpm': 'https://repo.ius.io/ius-release-el7.rpm',
-  },
-}, 'osmajorrelease') %}
-
-{% elif grains['os'] == 'RedHat' %}
-
-{% set pkg = salt['grains.filter_by']({
-  '6': {
-    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-6',
-    'key_hash': 'md5=daba0b37526f84040450e13faa248b70',
-    'rpm': 'https://repo.ius.io/ius-release-el6.rpm',
-  },
-  '7': {
-    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-7',
-    'key_hash': 'md5=de41e378194acdc9d324f93c82ab0593',
-    'rpm': 'https://repo.ius.io/ius-release-el7.rpm',
-  },
-}, 'osmajorrelease') %}
-
-{% endif %}
-
 {% if grains['os_family'] == 'RedHat' %}
+
+{% set pkg = salt['grains.filter_by']({
+  '6': {
+    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-6',
+    'key_hash': 'md5=daba0b37526f84040450e13faa248b70',
+    'rpm': 'https://repo.ius.io/ius-release-el6.rpm',
+  },
+  '7': {
+    'key': 'https://repo.ius.io/RPM-GPG-KEY-IUS-7',
+    'key_hash': 'md5=de41e378194acdc9d324f93c82ab0593',
+    'rpm': 'https://repo.ius.io/ius-release-el7.rpm',
+  },
+}, 'osmajorrelease') %}
 
 ius.pubkey:
   file.managed:
